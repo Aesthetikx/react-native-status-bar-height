@@ -97,6 +97,12 @@ describe("getStatusBarHeight", () => {
       const expectedSize = 47;
       expect(getStatusBarHeight()).toBe(expectedSize);
     });
+    test("Should return 44 when device is iOS and have iPhone 12 Mini width and height", () => {
+      mockCanvasSize(375, 812);
+      getStatusBarHeight = require("./").getStatusBarHeight;
+      const expectedSize = 47;
+      expect(getStatusBarHeight()).toBe(expectedSize);
+    });
   });
   describe("Android", () => {
     let getStatusBarHeight: (skipAndroid?: boolean) => number;
